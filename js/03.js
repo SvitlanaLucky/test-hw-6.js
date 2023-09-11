@@ -13,8 +13,6 @@ const images = [
   },
 ];
 
-const refs = document.querySelector('.gallery');
-
 function createGalleryMarkup(images) {
   return images
     .map(

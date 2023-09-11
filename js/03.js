@@ -13,11 +13,17 @@ const images = [
   },
 ];
 
+const refs = document.querySelector('.gallery ');
+
 function createGalleryMarkup(images) {
-  return images.map(
-    item =>
-      `<li class="gallery__item"><img class="gallery__img" src="" alt=""></li>`
-  );
+  return images
+    .map(
+      ({ url, alt }) =>
+        `<li class="gallery__item"><img class="gallery__img" src="${url}" alt="${alt}"></li>`
+    )
+    .join('');
 }
 
 console.log(createGalleryMarkup(images));
+
+refs.insertAdjacentHTML('beforeend', createGalleryMarkup(images));

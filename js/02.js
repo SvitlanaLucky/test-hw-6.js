@@ -15,7 +15,7 @@ for (const obj of ingredients) {
   element.textContent = obj;
   element.classList.add('item');
 
-  newItem.push(element);
+  newElement.push(element);
 }
 
-list.append(...newItem);
+list.append(...newElement);

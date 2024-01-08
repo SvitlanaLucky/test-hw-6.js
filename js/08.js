@@ -7,12 +7,14 @@ refs.form.addEventListener('submit', onSubmit);
 function onSubmit(event) {
   event.preventDefault();
 
-  const { email, password } = event.currentTarget.elements;
+  const formElements = event.currentTarget.elements;
+  const formEmail = formElements.email.value;
+  const formPassword = formElements.password.value;
 
-  const data = {
-    email: email.value,
-    password: password.value,
-  };
-
-  console.log(data);
+  if (formEmail === '' || formPassword === '') {
+    alert('enter the email or password please');
+  } else {
+    console.log({ Email: formEmail, Password: formPassword });
+  }
+  event.currentTarget.reset();
 }
